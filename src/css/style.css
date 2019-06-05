@@ -21,7 +21,7 @@ a {
 
 .container {
     width: 90%;
-    max-width: 700px;
+    max-width: 900px;
     margin: auto;
     height: 100%;
     display: flex;
@@ -32,7 +32,7 @@ a {
     background: #fff;
     margin: 40px 0;
     border-radius: 5px;
-    overflow: hidden;
+    overflow: hidden; /* para que solo quede entro el contenido de la tarjeta*/
     z-index: 1000;
     width: 100%;
 }
@@ -134,21 +134,21 @@ a {
 
 .slider_info .informacion .nombre {
     color: #444;
-    font-size: 38px;
-    line-height: 38px;
+    font-size: 34px;
+    line-height: 34px;
     font-weight: 600;
     margin-bottom: 16px;
 }
 
 .slider_info .informacion .trabajo {
-    color: #55acee;
+    color: #050505;
     font-size: 18px;
     line-height: 18px;
     
 }
 
 .slider_info .informacion .pais {
-    color: #8d8d8d;
+    color: #030303;
     font-size: 14px;
     line-height: 14px;
     margin-top: 16px;
@@ -161,15 +161,15 @@ a {
 }
 
 .slider_info .informacion .texto {
-    color: #55acee;
-    font-size: 18px;
+    color: #02080c;
+    font-size: 16px;
     line-height: 24px;
-    text-align: justify;
+    text-align: left;
 
 }
 
 .slider_info .informacion .subtitulo {
-    color: #444;
+    color: rgb(5, 5, 5);
     font-size: 18px;
     line-height: 24px;
     margin-bottom: 16px;
