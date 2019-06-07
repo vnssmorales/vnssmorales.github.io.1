@@ -32,9 +32,9 @@ $(document).ready(function () {
     }
 
     const alturaInfo = function () {
-        const altura = info.padre.children('.slide').outerHeight();
+        const altura = info.padre.children('.active').outerHeight();
 
-        info.padre.css({
+        info.padre.animate({
             'height': altura + 'px'
         });
 
@@ -45,93 +45,98 @@ $(document).ready(function () {
 
     $(window).resize(function () {
         alturaBanner();
+        alturaInfo();
     });
+
+    ////-----------info------------////
 
     //banner boton siguiente//
 
-    $('#baner-next').on('click', function (e) {
+    $('#info-next').on('click', function (e) {
         e.preventDefault();
 
-        if (banner.position < banner.numeroSlides) {
+        if (info.position < info.numeroSlides) {
             //para que las demas slides empiecen desde la derecha//
-            banner.padre.children().not('active').css({
+            info.padre.children().not('active').css({
                 'left': '100%'
             });
 
             //quito la clase active y la pongo al siguiente elemento, y lo animo//
-            $('#banner .active').removeClass('active').next().addClass('active').animate({
+            $('#info .active').removeClass('active').next().addClass('active').animate({
                 'left': '0'
             });
 
             //animo el slide anterior para que se desplace a la izquierda//
-            $('#banner .active').prev().animate({
+            $('#info .active').prev().animate({
                 'left': '-100%'
             });
 
-            banner.position = banner.position + 1;
+            info.position = info.position + 1;
         } else {
             //hago que el slide activo se anime hacia la derecha//
-            $('#banner .active').animate({
+            $('#info .active').animate({
                 'left': '-100%'
             });
 
             //seleciono todos los slide que no tengan clase .active//
             //y los posiciono a la derecha//
-            banner.padre.children().not('active').css({
+            info.padre.children().not('active').css({
                 'left': '100%'
             });
 
             //elimino la clase active y se la pongo al primer elemento//
             //despues la animo//
-            $('#banner .active').removeClass('active');
-            banner.padre.children('.slide').first().addClass('active').animate({
+            $('#info .active').removeClass('active');
+            info.padre.children('.slide').first().addClass('active').animate({
                 'left': '0'
             });
 
             //reseteo la posicion a 1//
-            banner.position = 1;
+            info.position = 1;
         }
 
+        alturaInfo();
 
     });
 
     //banner boton anterior//
 
-    $('#baner-prev').on('click', function (e) {
-        e.preventDefault();
+    $('#info-prev').on('click', function (e) {
+        e.preventDefault(); //para evitar que se agregue # //
 
-        if (banner.position > 1) {
+        if (info.position > 1) {
 
-            banner.padre.children().not('.active').css({
+            info.padre.children().not('.active').css({
                 'left': '-100%'
             });
-            $('#banner .active').animate({
+            $('#info .active').animate({
                 'left': '100%'
             });
 
-            $('#banner .active').removeClass('active').prev().addClass('active').animate({
+            $('#info .active').removeClass('active').prev().addClass('active').animate({
                 'left': 0
             });
 
-            banner.position = banner.position - 1;
+            info.position = info.position - 1;
 
         }else {
-            banner.padre.children().not('active').css({
+            info.padre.children().not('.active').css({
+                'left': '-100%'
+            });
+
+            $('#info .active').animate({
                 'left': '100%'
             });
 
-            $('#banner .active').animate({
-                'left': '100%'
-            });
-
-            $('#banner .active').removeClass('active');
-            banner.padre.children().last().addClass('active').animate({
+            $('#info .active').removeClass('active');
+            info.padre.children().last().addClass('active').animate({
                 'left': 0
             });
 
-            banner.position = banner.numeroSlides;
+            info.position = info.numeroSlides;
         }
 
+        alturaInfo();
 
     });
 

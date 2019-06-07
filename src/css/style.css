@@ -10,7 +10,7 @@
 
 body {
     font-family: 'Open Sans', sans-serif;
-    background-color: #fae6e9;
+    background-color: #fca8c3;
     background-size: cover;
     background-attachment: fixed;
 }
@@ -102,7 +102,7 @@ a {
 }
 
 .slider_info .informacion article .slide {
-    background: #fff;
+   
     width: 100%;
     left: 100%;
     position: absolute;
@@ -112,14 +112,14 @@ a {
 .slider_info .flecha-info {
     font-size: 35px;
     line-height: 35px;
-    color: #ff99a8;
+    color: rgba(0,0,0,.3);
     position: absolute;
     top: 50%;
     z-index: 1000;
 }
 
 .slider_info .flecha-info:hover {
-    color: #ffa6cc;
+    color: rgba(0,0,0,.5);
 }
 
 .slider_info .flecha-info.anterior {
@@ -131,6 +131,10 @@ a {
 }
 
 /* estilos para slide de info */
+
+section .slider_info {
+    background: #dae5cc;
+}
 
 .slider_info .informacion .nombre {
     color: #444;
@@ -175,3 +179,54 @@ a {
     margin-bottom: 16px;
     
 }
+
+/* Botones slider info */
+
+.slider_info .botones {
+    width: 100%;
+}
+
+.slider_info .botones span {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    margin: 0 10px;
+    border-radius: 50%;
+    background: #02080c;
+}
+
+.slider_info .botones .active {
+    background: #050505;
+}
+
+/* redes sociales */
+
+section .redes_sociales {
+    background: #dae5cc;
+}
+
+.redes_sociales {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.redes_sociales a {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 20px;
+    padding: 14px 0;
+    color: #fff;
+    background: #000;
+    border-radius: 50%;
+    margin: 0 10px;
+}
+
+.redes_sociales i {
+    font-size: 25px;
+}
+
+.redes_sociales .linkedin {background: #0077B5;}
+.redes_sociales .github {background: #000;}
+.redes_sociales .email {background:rgb(243, 143, 143);}
