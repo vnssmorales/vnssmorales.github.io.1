@@ -48,6 +48,12 @@ $(document).ready(function () {
         alturaInfo();
     });
 
+    $('#info').children('.slide').each(function(){
+        $('#botones').append('<span>');
+    });
+
+    $('#botones').children('span').first().addClass('active');
+
     ////-----------info------------////
 
     //banner boton siguiente//
@@ -71,6 +77,8 @@ $(document).ready(function () {
                 'left': '-100%'
             });
 
+            $('#botones').children('.active').removeClass('active').next().addClass('active');
+
             info.position = info.position + 1;
         } else {
             //hago que el slide activo se anime hacia la derecha//
@@ -90,6 +98,9 @@ $(document).ready(function () {
             info.padre.children('.slide').first().addClass('active').animate({
                 'left': '0'
             });
+
+            $('#botones').children('.active').removeClass('active');
+            $('#botones').children('span').first().addClass('active');
 
             //reseteo la posicion a 1//
             info.position = 1;
@@ -117,6 +128,8 @@ $(document).ready(function () {
                 'left': 0
             });
 
+            $('#botones').children('.active').removeClass('active').prev().addClass('active');
+
             info.position = info.position - 1;
 
         }else {
@@ -132,6 +145,9 @@ $(document).ready(function () {
             info.padre.children().last().addClass('active').animate({
                 'left': 0
             });
+
+            $('#botones').children('.active').removeClass('active');
+            $('#botones').children('span').last().addClass('active');
 
             info.position = info.numeroSlides;
         }

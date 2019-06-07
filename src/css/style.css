@@ -192,11 +192,11 @@ section .slider_info {
     display: inline-block;
     margin: 0 10px;
     border-radius: 50%;
-    background: #02080c;
+    background: #ff80aa;
 }
 
 .slider_info .botones .active {
-    background: #050505;
+    background: #ff4d88;
 }
 
 /* redes sociales */
